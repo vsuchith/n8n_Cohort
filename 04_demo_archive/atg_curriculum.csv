@@ -1,0 +1,39 @@
+sl_no,level,title,duration,url
+1,Introduction,Introduction to Generative AI,1 Hour,https://www.cloudskillsboost.google/paths/118
+2,Introduction,Introduction to Large Language Models,1 Hour,https://www.cloudskillsboost.google/paths/118
+3,Introduction,Introduction to Responsible AI,1 Hour,https://www.cloudskillsboost.google/paths/118
+4,Nice to have,Prompt Design in Vertex AI,3 Hours,https://www.cloudskillsboost.google/paths/118
+5,Introduction,Responsible AI: Applying AI Principles with Google Cloud,3 Hours,https://www.cloudskillsboost.google/paths/118
+6,Prompt Engineering,Introduction to Prompt Engineering Fundamentals,3 Hours,https://www.simplilearn.com/prompt-engineering-free-course-skillup
+7,Prompt Engineering,Prompt Engineering for Effective Interaction with ChatGPT,12 Hours,https://machinelearningmastery.com/prompt-engineering-for-effective-interaction-with-chatgpt/
+8,Advance,Introduction to Image Generation,1 Hour,https://www.cloudskillsboost.google/paths/183
+9,Advance,Attention Mechanism,1 Hour,https://www.cloudskillsboost.google/paths/183
+10,Advance,Encoder-Decoder Architecture,1 Hour,https://www.cloudskillsboost.google/paths/183
+11,Nice to have,Transformer Models and BERT Model,1 Hour,https://www.cloudskillsboost.google/paths/183
+12,Advance,Create Image Captioning Models,1 Hour,https://www.cloudskillsboost.google/paths/183
+13,Nice to have,Introduction to Vertex AI Studio,2 Hours,https://www.cloudskillsboost.google/paths/183
+14,Advance,Vector Search and Embeddings,5 Hours,https://www.cloudskillsboost.google/paths/183
+15,Advance,Inspect Rich Documents with Gemini Multimodality and Multimodal RAG,2 Hours,https://www.cloudskillsboost.google/paths/183
+16,Advance,Responsible AI for Developers: Fairness and Bias,4 Hours,https://www.cloudskillsboost.google/paths/183
+17,Advance,Responsible AI for Developers: Interpretability and Transparency,3 Hours,https://www.cloudskillsboost.google/paths/183
+18,Advance,Responsible AI for Developers: Privacy and Safety,5 Hours,https://www.cloudskillsboost.google/paths/183
+19,Advance,Machine Learning Operations (MLOps) for Generative AI,1 Hour,https://www.cloudskillsboost.google/paths/183
+20,Introduction,GitHub CoPilot training video,3 Hours,https://drive.google.com/file/d/12vWnFmbM3jRuiCTXkL_Sy93BUOEalChV/view
+21,Tutorials,VS Code Lesson 1: GitHub Copilot 101,2 Hours,https://github.com/features/copilot/tutorials
+22,Tutorials,VS Code Lesson 2: Mastering the basics,2 Hours,https://github.com/features/copilot/tutorials
+23,Tutorials,VS Code Lesson 3: Practices for success,2 Hours,https://github.com/features/copilot/tutorials
+24,Assignments,Project 1: Simple chatbot with Gemini API + Langchain backend,2 days,Project 1
+25,Assignments,Project 2: Add Postgres DB layer + Amzur employee login,2 days,Project 2
+26,Assignments,Project 3: Google login + chat thread CRUD with auto-naming,2 days,Project 3
+27,Assignments,Project 4: 5-message conversation memory,2 days,Project 4
+28,Assignments,Project 5: Multimodal input (images videos tables formulas code),2 days,Project 5
+29,Assignments,Project 6: Image generation with Gemini 2.0,2 days,Project 6
+30,Assignments,Project 7: PDF upload + RAG with ChromaDB + OpenAI Embeddings Large,2 days,Project 7
+31,Assignments,Project 8: Connect to a database query in natural language (NL-to-SQL),2 days,Project 8
+32,Assignments,Project 9: Extend NL queries to Excel/GSheet files,2 days,Project 9
+33,Assignments,Project 10: Image rule-checking via data extraction,2 days,Project 10
+34,Assignments,Project 11: Basic LLM agent with Langchain,2 days,Project 11
+35,Assignments,Project 12: Tic-tac-toe agent with Langchain,2 days,Project 12
+36,Assignments,Project 13: Agent with MCP example,2 days,Project 13
+37,Assignments,Project 14: Create agents with N8N,2 days,Project 14
+41,Final Project,Capstone — details revealed after all modules completed,15 days,The final project (Capstone)

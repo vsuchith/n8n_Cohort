@@ -1,0 +1,13 @@
+
+{
+  "meeting": "ATG team sync",
+  "date": "2026-04-24",
+  "time": "11:00 AM",
+  "presenters": [
+    {"name": "Gene", "topic": "Full curriculum assignments overview"},
+    {"name": "You", "topic": "Project 14 — n8n agent demo"},
+    {"name": "Phani", "topic": "Project 13 — MCP (Copilot + custom app)"}
+  ],
+  "location": "TBD",
+  "notes": "Each presenter demos live. Aim for 5-7 minutes each."
+}
