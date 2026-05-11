@@ -540,16 +540,16 @@ next_action   = {{ $json.output.next_action }}
 - Subject: `Support Ticket Created: {{ $('Normalize Payload').item.json.ticket_id }}`
 - Body (HTML): include ticket_id, issue, category, priority, assigned_team, status from `$('Normalize Payload')` and `$('AI Agent').item.json.output`
 
-**Respond to Webhook body:**
+**Edit Fields (Set): Shape Response** *(insert before Respond to Webhook)*
+- Keep Only Set Fields: ON
+- Fields (expression toggle on each value):
+  - `success` Boolean `true`
+  - `ticket_id` String `{{ $('Normalize Payload').item.json.ticket_id }}`
+  - `status` String `open`
+  - `summary` String `{{ $('AI Agent').item.json.output.summary }}`
 
-- Respond With: JSON
-- **Click the `=` icon on the Body field** to switch to expression mode, then enter:
-
-```
-={{ { "success": true, "ticket_id": $('Normalize Payload').item.json.ticket_id, "status": "open", "summary": $('AI Agent').item.json.output.summary } }}
-```
-
-> `{{ }}` inside a plain JSON block are literal strings in n8n — the `=` toggle is required for node references to be evaluated.
+**Respond to Webhook:**
+- Respond With: `First Incoming Item's JSON`
 
 ---
 

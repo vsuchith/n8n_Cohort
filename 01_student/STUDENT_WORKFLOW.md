@@ -227,7 +227,7 @@ Submit:
 | n8n runs but no ticket row appears | PostgreSQL credential, table name, or column mapping is wrong. Use the Supabase pooler on port `6543`. |
 | Gmail does not send (creation) | Re-open the Gmail credential and re-authorize OAuth. |
 | Gmail "Cannot read properties of undefined (reading 'split')" in Status Notifier | The canvas AI uses wrong field names: `$json.body.email` (should be `$json.body.user_email`) and camelCase `$json.body.ticketId` / `$json.body.status` (should be `$json.body.ticket_id` / `$json.body.new_status`). Fix **To**, **Subject**, and **Message** fields manually in the Gmail node. |
-| Panel shows `{{ $('Normalize Payload')... }}` as text | Respond to Webhook Body field is not in expression mode. Click the `=` icon on the Body field and re-enter the body as a JavaScript expression (see P10_N8N.md Node 6). |
+| Panel shows `{{ $('Normalize Payload')... }}` as text | Respond to Webhook is returning unevaluated expressions. Fix: add an **Edit Fields (Set)** node before Respond to Webhook with fields `success`, `ticket_id`, `status`, `summary` (use `=` expression toggle per field), then set Respond to Webhook → **Respond With: First Incoming Item's JSON**. |
 | Ticket ID is missing in response | Check the node name `Normalize Payload`; expressions are case-sensitive. |
 | Create Ticket panel does not call n8n | Check `automationApi` import in `api.ts` and confirm the Submit button is wired to `automationApi.createTicket()`. |
 | Submit returns 422 | The `message` field is empty or missing — confirm the textarea value is passed in the request body. |

@@ -169,15 +169,21 @@ Rules:
 - Subject: `Support Ticket Created: {{ $('Normalize Payload').item.json.ticket_id }}`
 - Body: include `ticket_id`, `issue`, `category`, `priority`, `assigned_team` from Normalize Payload and AI Agent nodes
 
+**Edit Fields (Set): Shape Response** *(add this node before Respond to Webhook)*
+- Keep Only Set Fields: ON
+- Fields (use `=` expression toggle on each value):
+
+| Name | Type | Value |
+|---|---|---|
+| `success` | Boolean | `true` |
+| `ticket_id` | String | `{{ $('Normalize Payload').item.json.ticket_id }}` |
+| `status` | String | `open` |
+| `summary` | String | `{{ $('AI Agent').item.json.output.summary }}` |
+
 **Respond to Webhook**
-- Respond With: JSON
-- **Click the `=` icon on the Body field** to switch to expression mode, then enter:
+- Respond With: `First Incoming Item's JSON`
 
-```
-={{ { "success": true, "ticket_id": $('Normalize Payload').item.json.ticket_id, "status": "open", "summary": $('AI Agent').item.json.output.summary } }}
-```
-
-> `{{ }}` expressions inside a plain JSON block are NOT evaluated by n8n — they come back as literal strings. The `=` toggle puts the whole field into expression mode so n8n resolves the node references.
+> Using a Set node upstream avoids expression evaluation issues inside the Respond to Webhook JSON body. The Respond to Webhook node just passes through the already-resolved object.
 
 ---
 

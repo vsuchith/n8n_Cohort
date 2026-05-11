@@ -40,6 +40,8 @@ n8n Workflow 1 — Ticket Creation:
     ↓
   Gmail: Send Confirmation   ← emails the user immediately
     ↓
+  Edit Fields: Shape Response ← builds { success, ticket_id, status, summary }
+    ↓
   Respond to Webhook
     → { success, ticket_id, status, summary }
 
@@ -259,18 +261,25 @@ Rules:
 
 > **Say:** "Notice we're referencing `$('AI Agent').item.json.output.xxx` here — not `$json.output.xxx`. After the PostgreSQL node ran, `$json` refers to the PostgreSQL result. To get the AI's output, we reference the AI Agent node by name. This is a common n8n pattern: reach back to any named node to access its data."
 
-### 2.9 — Respond to Webhook (2 min)
+### 2.9 — Edit Fields: Shape Response (1 min)
 
-1. Click `+` on `Send Confirmation` output → **"Respond to Webhook"**
-2. **Respond With:** JSON
-3. **Click the `=` icon on the Body field** to switch to expression mode
-4. Enter:
+1. Click `+` on `Send Confirmation` output → **"Edit Fields (Set)"**
+2. **Keep Only Set Fields:** ON
+3. Add 4 fields (use the `=` expression toggle on each value):
 
-```
-={{ { "success": true, "ticket_id": $('Normalize Payload').item.json.ticket_id, "status": "open", "summary": $('AI Agent').item.json.output.summary } }}
-```
+| Name | Type | Value |
+|---|---|---|
+| `success` | Boolean | `true` |
+| `ticket_id` | String | `{{ $('Normalize Payload').item.json.ticket_id }}` |
+| `status` | String | `open` |
+| `summary` | String | `{{ $('AI Agent').item.json.output.summary }}` |
 
-> **Trainer note:** `{{ }}` expressions inside a plain JSON block are returned as literal strings by n8n. The `=` toggle puts the whole Body field into expression mode. If students see the raw expression text in the React panel instead of the ticket ID, this is the cause.
+### 2.10 — Respond to Webhook (1 min)
+
+1. Click `+` on `Shape Response` output → **"Respond to Webhook"**
+2. **Respond With:** `First Incoming Item's JSON`
+
+> **Trainer note:** Using a Set node to pre-build the response object avoids the expression evaluation issue inside the Respond to Webhook JSON body. Students who used "Respond With: JSON" with `{{ }}` in the body see the raw expression strings in the React panel instead of values — this approach bypasses that entirely.
 
 ### 2.10 — Test (5 min, live)
 
