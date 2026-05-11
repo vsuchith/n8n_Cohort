@@ -271,7 +271,7 @@ Rules:
 | `success` | Boolean | `true` |
 | `ticket_id` | String | `{{ $('Normalize Payload').item.json.ticket_id }}` |
 | `status` | String | `open` |
-| `summary` | String | `Created {{ $('Normalize Payload').item.json.ticket_id }} | {{ $json.output.summary }} | Status: Open` |
+| `summary` | String | `{{ $json.output.summary }}` |
 
 ### 2.10 — Respond to Webhook (1 min)
 

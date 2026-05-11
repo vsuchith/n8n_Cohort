@@ -545,7 +545,7 @@ next_action   = {{ $json.output.next_action }}
   - `success` Boolean `true`
   - `ticket_id` String `{{ $('Normalize Payload').item.json.ticket_id }}`
   - `status` String `open`
-  - `summary` String `Created {{ $('Normalize Payload').item.json.ticket_id }} | {{ $json.output.summary }} | Status: Open`
+  - `summary` String `{{ $json.output.summary }}`
 
 **Respond to Webhook:**
 - Respond With: `First Incoming Item's JSON`
