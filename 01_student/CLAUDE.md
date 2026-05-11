@@ -542,14 +542,14 @@ next_action   = {{ $json.output.next_action }}
 
 **Respond to Webhook body:**
 
-```json
-{
-  "success": true,
-  "ticket_id": "{{ $('Normalize Payload').item.json.ticket_id }}",
-  "status": "open",
-  "summary": "{{ $('AI Agent').item.json.output.summary }}"
-}
+- Respond With: JSON
+- **Click the `=` icon on the Body field** to switch to expression mode, then enter:
+
 ```
+={{ { "success": true, "ticket_id": $('Normalize Payload').item.json.ticket_id, "status": "open", "summary": $('AI Agent').item.json.output.summary } }}
+```
+
+> `{{ }}` inside a plain JSON block are literal strings in n8n — the `=` toggle is required for node references to be evaluated.
 
 ---
 

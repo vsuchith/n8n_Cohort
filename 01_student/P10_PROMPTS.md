@@ -170,16 +170,14 @@ Rules:
 - Body: include `ticket_id`, `issue`, `category`, `priority`, `assigned_team` from Normalize Payload and AI Agent nodes
 
 **Respond to Webhook**
-- Response Body (JSON):
+- Respond With: JSON
+- **Click the `=` icon on the Body field** to switch to expression mode, then enter:
 
-```json
-{
-  "success": true,
-  "ticket_id": "{{ $('Normalize Payload').item.json.ticket_id }}",
-  "status": "open",
-  "summary": "{{ $('AI Agent').item.json.output.summary }}"
-}
 ```
+={{ { "success": true, "ticket_id": $('Normalize Payload').item.json.ticket_id, "status": "open", "summary": $('AI Agent').item.json.output.summary } }}
+```
+
+> `{{ }}` expressions inside a plain JSON block are NOT evaluated by n8n — they come back as literal strings. The `=` toggle puts the whole field into expression mode so n8n resolves the node references.
 
 ---
 

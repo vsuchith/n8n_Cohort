@@ -263,16 +263,14 @@ Rules:
 
 1. Click `+` on `Send Confirmation` output → **"Respond to Webhook"**
 2. **Respond With:** JSON
-3. **Response Body:**
+3. **Click the `=` icon on the Body field** to switch to expression mode
+4. Enter:
 
-```json
-{
-  "success": true,
-  "ticket_id": "{{ $('Normalize Payload').item.json.ticket_id }}",
-  "status": "open",
-  "summary": "{{ $('AI Agent').item.json.output.summary }}"
-}
 ```
+={{ { "success": true, "ticket_id": $('Normalize Payload').item.json.ticket_id, "status": "open", "summary": $('AI Agent').item.json.output.summary } }}
+```
+
+> **Trainer note:** `{{ }}` expressions inside a plain JSON block are returned as literal strings by n8n. The `=` toggle puts the whole Body field into expression mode. If students see the raw expression text in the React panel instead of the ticket ID, this is the cause.
 
 ### 2.10 — Test (5 min, live)
 
