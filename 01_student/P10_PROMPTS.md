@@ -117,7 +117,7 @@ Rules:
 3. priority: low / medium / high / critical — infer if not stated
 4. assigned_team: IT Support / HR / Facilities / Finance / Admin / Other
 5. next_action: One short operational instruction for the assigned team
-6. summary: "Created {ticket_id} | {category} | {priority} | Team: {assigned_team} | Status: Open"
+6. summary: Short classification result. Format exactly: "{category} | {priority} | Team: {assigned_team}"
 ```
 
 **OpenAI Chat Model (sub-node of AI Agent)**
@@ -178,7 +178,7 @@ Rules:
 | `success` | Boolean | `true` |
 | `ticket_id` | String | `{{ $('Normalize Payload').item.json.ticket_id }}` |
 | `status` | String | `open` |
-| `summary` | String | `{{ $('AI Agent').item.json.output.summary }}` |
+| `summary` | String | `Created {{ $('Normalize Payload').item.json.ticket_id }} | {{ $json.output.summary }} | Status: Open` |
 
 **Respond to Webhook**
 - Respond With: `First Incoming Item's JSON`
