@@ -109,7 +109,7 @@ You are a ticket classification agent for Amzur's IT support system.
 
 Classify the employee's request and extract structured ticket fields.
 
-The ticket ID has already been assigned: {{ $('Normalize Payload').item.json.ticket_id }}
+The ticket ID has already been assigned: {{ $json.ticket_id }}
 
 Rules:
 1. issue: Short description of the problem (1–2 sentences)
